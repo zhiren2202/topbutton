@@ -1,56 +1,5 @@
 @import url(reset.css);
 
-.top_button {
-    width: 80%;
-    height: 2000px;
-    margin: 0 auto;
-    padding-top: 2em;
-    background-color: #b4e2f1;
-    text-align: center;
-    position: relative;
-}
-[class*="page_"] {
-    position: absolute;
-    width: 100%;
-    height: 50px;
-    line-height: 50px;
-    background-color: midnightblue;
-    color: #fff;
-}
-.page_top {
-    top: 0;
-}
-.page_bottom {
-    bottom: 0;
-}
-
-[class*="top_btn"] {
-    width: 100px;
-    height: 100px;
-    line-height: 100px;
-    text-align: center;
-    z-index: 2;
-}
-
-.top_btn1 {
-    position: fixed;
-    bottom: 5px;
-    right: 10px;
-    background-color: #b8b8f5;
-}
-
-.top_btn2 {
-    position: fixed;
-    bottom: 110px;
-    right: 10px;
-    background: transparent url(../img/cow.png) no-repeat center/contain;
-}
-.top_btn2.jump {
-    animation-name: jump;
-    animation-timing-function: ease-out;
-    animation-duration: 2s;
-    animation-iteration-count: 1;
-}
 @keyframes jump {
     0% {
         transform: translateY(0);
@@ -74,9 +23,56 @@
         transform: translateY(0);
     }
 }
+@keyframes spin {
+    0% {
+        transform: rotate(0);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+body {
+    height: 2000px;
+    background-color: gray;
+}
+
+[class*="top_btn"] {
+    width: 100px;
+    height: 100px;
+    line-height: 100px;
+    text-align: center;
+    position: fixed;
+    right: 0;
+	bottom: 0;
+    z-index: 2;
+    transition: all .3s;
+}
+
+[class*="top_btn"].scroll {
+    transform: translate(0);
+}
+
+.top_btn1 {
+    bottom: 5px;
+    transform: translateX(100%);
+    background-color: #b8b8f5;
+}
+
+.top_btn2 {
+    bottom: 110px;
+    transform: translateX(100%);
+    background: transparent url(../img/cow.png) no-repeat center/contain;
+}
+
+.top_btn2.scroll {
+    animation-name: jump;
+    animation-timing-function: ease-out;
+    animation-duration: 2s;
+    animation-iteration-count: 1;
+}
 
 .top_btn3 {
-    position: fixed;
     bottom: 110px;
     right: 115px;
     background: transparent url(../img/cow.png) no-repeat center/contain;
@@ -87,42 +83,23 @@
     animation-duration: 1s;
     animation-iteration-count: 1;
 }
-@keyframes spin {
-    0% {
-        transform: rotate(0);
-    }
-    100% {
-        transform: rotate(360deg);
-    }
-}
 
 .top_btn4 { 
     background-color: #e8f5b8;
-	position: fixed;
 	right: 115px;
-	bottom: -100px;
-    opacity: 1;
-    transform: translateY(-105px);
-    transition: all 400ms ease-out;
-}
-
-.top {
-    opacity: 0;
-    transform: translateY(105px);
-    transition: all 400ms ease-out;
+    transform: translateY(100%);
+    transition: all .4s ease-out;
 }
 
 .top_btn5 { 
     background-color: #d5b8f5;
-	position: fixed;
 	right: 220px;
-	bottom: 5px;
+    transform: translateY(100%);
+    transition: all .4s ease-out;
 }
 
 .top_btn6 {
-    /* background-color: #aaa; */
     color: #fff;
-	position: fixed;
     width: 50px;
     height: 50px;
 	right: 220px;
@@ -133,16 +110,3 @@
 .top_btn6:hover {
     opacity: 1;
 }
-/* .top_btn6::before {
-    display: block;
-    content: "";
-    width: 50px;
-    height: 50px;
-    line-height: 50px;
-    font-size: 1.5em;
-} */
-
-/* .top_btn6:focus {
-    transform: translateY(200px);
-    transition: all 400ms ease-out;
-} */
