@@ -129,9 +129,9 @@ body {
 .top_btn6.scroll {
     opacity: 0.6;
 }
-.top_btn6:hover {
-    opacity: 1;
-}
 .top_btn6.click {
     box-shadow: 0 0 5px 2px #fff;
+}
+.top_btn6:hover {
+    opacity: 1;
 }
