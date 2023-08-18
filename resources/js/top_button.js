@@ -23,9 +23,9 @@ topBtn3.addEventListener('mouseout', () => {
   topBtn3.classList.add('spin-reverse');
 });
 
-window.addEventListener('click', () => {
+topBtn6.addEventListener('click', () => {
   topBtn6.classList.add('click');
 });
-window.addEventListener('mouseout', () => {
+topBtn6.addEventListener('mouseout', () => {
   topBtn6.classList.remove('click');
 });
