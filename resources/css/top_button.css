@@ -31,6 +31,14 @@
         transform: rotate(360deg);
     }
 }
+@keyframes spin-reverse {
+    0% {
+        transform: rotate(0);
+    }
+    100% {
+        transform: rotate(-360deg);
+    }
+}
 
 body {
     height: 2000px;
@@ -54,18 +62,18 @@ body {
 }
 
 .top_btn1 {
-    bottom: 5px;
-    transform: translateX(100%);
+    bottom: 10px;
+    right: 10px;
     background-color: #b8b8f5;
 }
 
 .top_btn2 {
-    bottom: 110px;
-    transform: translateX(100%);
+    bottom: 120px;
+    right: 10px;
     background: transparent url(../img/cow.png) no-repeat center/contain;
 }
 
-.top_btn2.scroll {
+.top_btn2.scrollWheel {
     animation-name: jump;
     animation-timing-function: ease-out;
     animation-duration: 2s;
@@ -73,40 +81,57 @@ body {
 }
 
 .top_btn3 {
-    bottom: 110px;
+    bottom: 120px;
     right: 115px;
-    background: transparent url(../img/cow.png) no-repeat center/contain;
-}
-.top_btn3:hover {
-    animation-name: spin;
+    transform: translateX(210%);
     animation-timing-function: ease-in-out;
     animation-duration: 1s;
     animation-iteration-count: 1;
+    background: transparent url(../img/cow.png) no-repeat center/contain;
+}
+.top_btn3.spin {
+    animation-name: spin;
+}
+.top_btn3.spin-reverse {
+    animation-name: spin-reverse;
 }
 
 .top_btn4 { 
     background-color: #e8f5b8;
+    bottom: 10px;
 	right: 115px;
-    transform: translateY(100%);
+    transform: translateY(110%);
     transition: all .4s ease-out;
 }
 
 .top_btn5 { 
     background-color: #d5b8f5;
+    bottom: 10px;
 	right: 220px;
-    transform: translateY(100%);
     transition: all .4s ease-out;
+    opacity: 0;
+}
+.top_btn5.scrollWheel {
+    opacity: 1;
 }
 
 .top_btn6 {
-    color: #fff;
     width: 50px;
     height: 50px;
 	right: 220px;
-	bottom: 110px;
-    opacity: 0.6;
+    bottom: 120px;
+    color: #fff;
+    border-radius: 25px;
     background: transparent url(../img/btn_top.png) no-repeat center/cover;
+    transition: all .4s ease-out;
+    opacity: 0;
+}
+.top_btn6.scroll {
+    opacity: 0.6;
 }
 .top_btn6:hover {
     opacity: 1;
+}
+.top_btn6.click {
+    box-shadow: 0 0 5px 2px #fff;
 }
